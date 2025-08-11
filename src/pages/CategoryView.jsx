@@ -51,9 +51,9 @@ export default function CategoryView() {
           </ul>
         </div>
       )}
-      <h3>Products</h3>
       {loading ? <p>Loading…</p> : (
         <>
+          {!!(pageData?.content?.length) && <h3>Products</h3>}
           <div className="grid">
             {pageData?.content?.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
